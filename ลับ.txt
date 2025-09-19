@@ -1,0 +1,36 @@
+npm install // npm install -g npm@11.1.0
+npm init -y
+npm install express socket.io
+npm install pg   
+
+node server.js (รันเซิฟ)
+
+
+//PostgreSQL
+สร้างฐานข้อมูลชื่อ gps_tracking
+
+//สร้างตาราง
+CREATE TABLE devices (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    drone_id VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE location_logs (
+    id SERIAL PRIMARY KEY,
+    device_id INT REFERENCES devices(id), 
+    latitude DOUBLE PRECISION,
+    longitude DOUBLE PRECISION,
+    speed DOUBLE PRECISION,
+    altitude DOUBLE PRECISION,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+// insert ข้อมูลลงใน ตาราง device
+id   device_name  serial_number
+1      Device1         nok1       (แล้วแต่จะตั้ง)
+
+
+//ลบlogในฐานข้อมูลและเริ่มนับ PK จาก1ใหม่
+DELETE FROM location_logs;
+ALTER SEQUENCE location_logs_id_seq RESTART WITH 1;
