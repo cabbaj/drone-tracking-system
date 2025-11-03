@@ -31,6 +31,8 @@ id   device_name  serial_number
 1      Device1         nok1       (แล้วแต่จะตั้ง)
 
 
+https://ip.com to enter the website
+
 //ลบlogในฐานข้อมูลและเริ่มนับ PK จาก1ใหม่
 DELETE FROM location_logs;
 ALTER SEQUENCE location_logs_id_seq RESTART WITH 1;

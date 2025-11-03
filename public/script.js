@@ -1,6 +1,6 @@
 const socket = io();
 
-const map = L.map("map").setView([0, 0], 2);
+const map = L.map("map").setView([7.084, 100.548], 10);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
