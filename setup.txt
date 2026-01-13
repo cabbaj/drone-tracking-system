@@ -18,7 +18,7 @@ CREATE TABLE devices (
 
 CREATE TABLE location_logs (
     id SERIAL PRIMARY KEY,
-    device_id INT REFERENCES devices(id), 
+    drone_id VARCHAR(255) REFERENCES devices(id), 
     latitude DOUBLE PRECISION,
     longitude DOUBLE PRECISION,
     speed DOUBLE PRECISION,
