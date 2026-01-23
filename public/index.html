@@ -1,60 +1,61 @@
 <!-- filepath: c:\Users\HP\Desktop\drone-gps-tracking\public\index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Drone Tracking</title>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div id="header">
-            <h1>Drone Tracking</h1>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drone Tracking</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Drone Tracking</h1>
+    </div>
 
-        <div class="navbar">
-            <div class="navbar-section">
-                <label for="droneSelect">Select Drone ID:</label>
-                <select id="droneSelect">
-                    <option value="">Select Drone ID</option>
-                </select>
-                <button id="confirmDrone">Confirm</button>
-                <button id="cancelDrone">Cancel</button>
-                <span id="selectedDroneDisplay"></span>
-            </div>
-            <div class="navbar-section">
-                <label for="altitudeFilter">แสดงตำแหน่งตามระดับความสูง:</label>
-                <select id="altitudeFilter">
-                    <option value="all">ทั้งหมด</option>
-                    <option value="low">ต่ำ (ค่าตั้งแต่ 0 ลงไป)</option>
-                    <option value="medium">กลาง (ค่าตั้งแต่ 0 - 5)</option>
-                    <option value="high">สูง (ค่าตั้งแต่ 5 ขึ้นไป)</option>
-                </select>
-            </div>
-        </div>
+    <div class="navbar">
+      <div class="navbar-section">
+        <label for="droneSelect">Select Drone ID:</label>
+        <select id="droneSelect">
+          <option value="">Select Drone ID</option>
+        </select>
+        <button id="confirmDrone">Confirm</button>
+        <button id="cancelDrone">Cancel</button>
+        <span id="selectedDroneDisplay"></span>
+      </div>
+      <div class="navbar-section">
+        <label for="altitudeFilter">แสดงตำแหน่งตามระดับความสูง:</label>
+        <select id="altitudeFilter">
+          <option value="all">ทั้งหมด</option>
+          <option value="low">ต่ำ (ค่าตั้งแต่ 0 ลงไป)</option>
+          <option value="medium">กลาง (ค่าตั้งแต่ 0 - 5)</option>
+          <option value="high">สูง (ค่าตั้งแต่ 5 ขึ้นไป)</option>
+        </select>
+        <button id="toggleLog">Show/Hide Log</button>
+      </div>
+    </div>
 
-        <div class="content">
-            <div id="map"></div>
-            <div id="deviceList">
-                <h2>Device List</h2>
-            </div>
-        </div>
+    <div class="content">
+      <div id="map"></div>
+      <div id="deviceList">
+        <h2>Device List</h2>
+      </div>
+    </div>
 
-        <div class="log-container">
-            <div class="log-filter">
-                <label for="logFilter">Log</label>
-                <select id="logFilter">
-                    <option value="">ไม่แสดง</option>
-                    <option value="all">แสดงทั้งหมด</option>
-                </select>
-            </div>
-            <div id="logDisplay"></div>
-        </div>
+    <div class="log-container">
+      <div class="log-filter">
+        <label for="logFilter">Log</label>
+        <select id="logFilter">
+          <option value="">ไม่แสดง</option>
+          <option value="all">แสดงทั้งหมด</option>
+        </select>
+      </div>
+      <div id="logDisplay"></div>
+    </div>
 
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="script.js"></script>
-        <script src="fetchDrones.js"></script>
-    </body>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+    <script src="fetchDrones.js"></script>
+  </body>
 </html>
